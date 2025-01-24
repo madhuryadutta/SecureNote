@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
+            $table->text('content');
+            $table->string('password');
+            $table->string('password_hint')->nullable();
+            $table->timestamp('available_at')->nullable();
             $table->timestamps();
         });
     }
