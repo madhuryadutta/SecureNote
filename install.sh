@@ -1,4 +1,3 @@
-composer update
 composer install --optimize-autoloader --no-dev
 php artisan migrate
 php artisan key:generate
