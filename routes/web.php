@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +14,13 @@ use App\Http\Controllers\NoteController;
 |
 */
 
-Route::get('/', [NoteController::class, 'create'])->name('notes.create');
+// Route::get('/', [NoteController::class, 'create'])->name('notes.create');
+// Route::post('/', [NoteController::class, 'store'])->name('notes.store');
+// Route::get('/note/{id}', [NoteController::class, 'show'])->name('notes.show');
+// Route::post('/note/{id}', [NoteController::class, 'verify'])->name('notes.verify');
+
+Route::get('/', [NoteController::class, 'index'])->name('home');
+Route::get('/create', [NoteController::class, 'create'])->name('notes.create');
 Route::post('/', [NoteController::class, 'store'])->name('notes.store');
 Route::get('/note/{id}', [NoteController::class, 'show'])->name('notes.show');
 Route::post('/note/{id}', [NoteController::class, 'verify'])->name('notes.verify');
