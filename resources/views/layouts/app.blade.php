@@ -4,10 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Notes</title>
+    <title>{{ config('app.name') }}</title>
+
+    <meta name="description"
+        content="Secure Notes - A private and secure place to create, edit, and manage your notes effortlessly.">
+    <meta name="keywords" content="Secure Notes, Private Notes, Note Management, Secure App, Privacy">
+    <meta name="author" content="DataByteDigital">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#4A5568">
+
     <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
     <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
-
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
