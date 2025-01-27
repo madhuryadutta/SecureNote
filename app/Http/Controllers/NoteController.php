@@ -5,9 +5,28 @@ namespace App\Http\Controllers;
 use App\Models\Note;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class NoteController extends Controller
 {
+    private $seconds = 3600;
+
+    private function _fetchNote($id)
+    {
+        $value = Cache::remember('note_'.$id, $this->seconds, function () use ($id) {
+            return Note::findOrFail($id);
+        });
+
+        return $value;
+    }
+
+    private function _deleteCacheNote($id)
+    {
+        Cache::forget('note_'.$id);
+
+        return true;
+    }
+
     public function index()
     {
         return view('landing');
@@ -41,14 +60,14 @@ class NoteController extends Controller
 
     public function show($id)
     {
-        $note = Note::findOrFail($id);
+        $note = $this->_fetchNote($id);
 
         return view('notes.show', compact('note'));
     }
 
     public function verify(Request $request, $id)
     {
-        $note = Note::findOrFail($id);
+        $note = $this->_fetchNote($id);
 
         if ($note->available_at && Carbon::now()->lt($note->available_at)) {
             return back()->withErrors(['message' => 'This note is not yet available.']);
