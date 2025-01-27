@@ -1,12 +1,3 @@
-{{-- @extends('layouts.app')
-@section('content')
-    <div class="text-center">
-        <h1 class="text-4xl font-bold text-blue-600 mb-4">Welcome to Secure Notes</h1>
-        <p class="text-lg text-gray-700 mb-6">Create and share secure, password-protected notes with ease.</p>
-        <a href="{{ route('notes.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg">Get Started</a>
-    </div>
-@endsection --}}
-
 @extends('layouts.app')
 @section('content')
 <div class="relative bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 min-h-[60vh] flex flex-col items-center justify-center">
