@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name') }}</title>
-
+    @yield('meta') {{-- Dynamic Meta Tags --}}
     <meta name="description"
         content="Secure Notes - A private and secure place to create, edit, and manage your notes effortlessly.">
     <meta name="keywords" content="Secure Notes, Private Notes, Note Management, Secure App, Privacy">

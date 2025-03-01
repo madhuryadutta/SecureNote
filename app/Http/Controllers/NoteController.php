@@ -20,6 +20,13 @@ class NoteController extends Controller
         return $value;
     }
 
+    public function all()
+    {
+        $a = Note::all()->toArray();
+        echo '<pre>';
+        var_dump($a);
+    }
+
     private function _deleteCacheNote($id)
     {
         Cache::forget('note_'.$id);
@@ -77,6 +84,6 @@ class NoteController extends Controller
             return back()->withErrors(['password' => 'Invalid password.']);
         }
 
-        return view('notes.view', ['content' => $note->content]);
+        return view('notes.view', ['content' => $note->content, 'id' => $id]);
     }
 }
