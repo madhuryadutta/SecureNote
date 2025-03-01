@@ -13,6 +13,7 @@
         class="bg-white p-6 rounded-lg shadow-lg max-w-lg mx-auto mt-8">
         @csrf
         <h2 class="text-2xl font-bold mb-4 text-center text-blue-700">Enter Password to View Note</h2>
+        <h4 class="text-l font-bold mb-4 text-center text-green-700">🔑 Password Hint: <span style="color: blueviolet"> {{$note->password_hint}} <span></h4>
         <input type="password" name="password"
             class="w-full p-4 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500"
             placeholder="Enter the password to view the note" required>
